@@ -12,7 +12,7 @@ case ${OSTYPE} in
 	# MacOS
 	OS="MacOS"
 	;;
-    linux-gnu)
+    linux-*)
 	# Linux variant
 	if [ -f /etc/debian_version ] ; then
 	    OS="Debian"
@@ -29,7 +29,7 @@ case ${OSTYPE} in
 esac
 
 if [ "${OS}" == "Debian" ] ; then
-    sudo aptitude install -r -y zsh zsh-syntax-highlighting curl
+    sudo aptitude install -r -y zsh zsh-syntax-highlighting curl neofetch
 fi
 
 cat > ${HOME}/.zshenv << EOT

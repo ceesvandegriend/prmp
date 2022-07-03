@@ -1,2 +1,3 @@
-# prompt
-prmp / prompt
+# prmp / prompt
+
+Configure my personal `zsh` with `ansible`.

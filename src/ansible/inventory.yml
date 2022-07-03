@@ -1,0 +1,5 @@
+all:
+  hosts:
+    htb00.griend.dev:
+      ansible_host: 172.104.236.131
+      ansible_user: cees

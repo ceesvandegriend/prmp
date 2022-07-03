@@ -1,0 +1,65 @@
+---
+- name: zsh | ~/.zsh.d
+  file:
+    path: "/home/{{ prmp_user }}/.zsh.d/"
+    state: directory
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0700'
+
+- name: zsh | ~/.zshenv
+  template:
+    src: zshenv-home.j2
+    dest: "/home/{{ prmp_user }}/.zshenv"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+
+- name: zsh | ~/.zsh.d/.zshenv
+  template:
+    src: zshenv.j2
+    dest: "/home/{{ prmp_user }}/.zsh.d/.zshenv"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+
+- name: zsh | ~/.zsh.d/.zshrc
+  template:
+    src: zshrc.j2
+    dest: "/home/{{ prmp_user }}/.zsh.d/.zshrc"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+
+- name: zsh | ~/.zsh.d/.zprofile
+  template:
+    src: zprofile.j2
+    dest: "/home/{{ prmp_user }}/.zsh.d/.zprofile"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+
+- name: zsh | ~/.zsh.d/.zlogin
+  template:
+    src: zlogin.j2
+    dest: "/home/{{ prmp_user }}/.zsh.d/.zlogin"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+
+- name: zsh | ~/.zsh.d/.zlogout
+  template:
+    src: zlogout.j2
+    dest: "/home/{{ prmp_user }}/.zsh.d/.zlogout"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+
+- name: zsh | ~/.zsh.d/ templates
+  copy:
+    src: zsh.d/
+    dest: "/home/{{ prmp_user }}/.zsh.d/"
+    owner: "{{ prmp_user }}"
+    group: "{{ prmp_group }}"
+    mode: '0600'
+  
